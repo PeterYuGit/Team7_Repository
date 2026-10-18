@@ -23,3 +23,22 @@
 | Small | 1.0 lb or less and 1 in thick or less |
 | Medium | 3.0 lb or less (and not Small) |
 | Large | More than 3.0 lb |
+
+
+## Notes for other sections
+
+**For Section 5 (Open Questions):**
+- Q1: What weight and size thresholds should decide each packaging type? Answerable by the bookstore or shipping manager. Needed before P2. Assumed in the meantime: the values in Table 3.1.
+- Q2: Who performs the inspection for flagged books, a separate inspector or the packing employee? Answerable by the shipping facility manager. Assumed in the meantime: a separate inspector role.
+
+**For Section 2.2 (Stakeholders):**
+- Add "Packing employee" (primary user, enters weights and follows recommendations). Source for FR-01, FR-02, FR-03, FR-11.
+- Add "Inspector" (reviews flagged books). Needed for FR-13.
+
+**For Section 1.4 (References):**
+- [R1] USPS maximum package weight (70 lb), used in FR-09. Add the USPS page link.
+
+**For Section 3.4 (Use Cases):**
+- UC: Process Book for Shipment (FR-01 to FR-10)
+- UC: Override Packaging Recommendation (FR-11, FR-12)
+- UC: Inspect Flagged Book (FR-13)
