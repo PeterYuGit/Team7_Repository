@@ -15,6 +15,8 @@
 | FR-11 | The system shall allow an employee to override a packaging recommendation. | SHOULD | Packing employee | The override is saved, replacing the original recommendation. |
 | FR-12 | The system shall require a written reason when an employee overrides a recommendation. | SHOULD | Bookstore | An override with an empty reason is rejected. |
 | FR-13 | The system shall allow an inspector to record Pass or Fail for a flagged book. | MUST | Bookstore | A flagged book cannot be marked ready to ship until Pass is recorded. |
+| FR-14| The system shall display all books with an inspection status of “awaiting inspection”, including each book’s weight, dimensions, and packaging type. | SHOULD | Inspector | With two flagged books and one unflagged book in the system, the list shows exactly the two flagged books, each with weight, dimensions, and packaging type. |
+| FR-15 | The system shall allow an employee to view a book’s shipping record, including its weight, packaging type, and inspection status. | SHOULD | Packing Employee | After a book is processed, opening its record shows weight, packaging type, and inspection status. |
 
 ## Table 3.1 - Classification thresholds (ASSUMED, see Open Questions)
 
