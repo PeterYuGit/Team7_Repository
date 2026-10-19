@@ -12,7 +12,7 @@
 | Ahmet Keles | System context diagrams, assumptions and open questions, inspection workflow, and P2 architecture. |
 | Lucas Pham | P2 user workflow and interface requirements review, including packing employee and inspector interactions. |
 
-**Working agreement (proposed):** The team discusses work and disagreements in Discord and tracks assignments and decisions through GitHub Issues. Members seek consensus first; a majority vote is proposed if consensus cannot be reached. Stakeholder-dependent requirement changes need confirmation. All seven team members have confirmed their assigned roles for P1 to P2.
+**Working agreement:** The team discusses work and disagreements in Discord and tracks assignments and decisions through GitHub Issues. Members seek consensus first; a majority vote is proposed if consensus cannot be reached. Stakeholder-dependent requirement changes need confirmation. All seven team members have confirmed their assigned roles for P1 to P2.
 
 ## 4.2 Plan to P2
 
