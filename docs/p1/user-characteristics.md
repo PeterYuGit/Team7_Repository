@@ -1,0 +1,5 @@
+# P1 Section 2.3 User Characteristics
+
+**Packing Employee (primary user):** Weighs the book using the machine scale or enters the weight manually if it is not available. Provides the book's length, width, and thickness in inches then packs it accordingly. Should be able to use the scale and an average computer. It can't be assumed that they understand the weight limits of the carrier or appropriate packing for each book, which is why the solution was created. Some options may be disregarded, but only with a written explanation of why that happened (FR-11, FR-12). We assumed that the packing personnel process a stream of books, therefore each book doesn't take much time to pack.
+
+**Inspector:** A flagged book may not be marked as ready for shipping until the fail or pass information is provided (FR-08, FR-13). It's important to know the packing standards of the facility. The station where the packaging occurs can't be taken for granted when a book has been flagged; the flagged book has to remain pending for action by someone before it is shipped (Q2). We assume this to be someone other than the packing staff.
