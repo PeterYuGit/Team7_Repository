@@ -15,7 +15,8 @@ BookPack is designed to help shipping facilities determine the appropriate packa
 | Recommend appropriate packaging, such as cardboard mailers, padded mailers, or reinforced boxes. | Physically package books or operate automated packaging machinery, since this requires mechanical equipment. |
 | Flag books weighing more than 5.0 lb for additional inspection before shipping. | Automatically inspect books for physical damage, since this requires advanced detection technology. |
 | Update shipping records with the book's weight, packaging type, and inspection status. | Manage carrier delivery, shipment tracking, or transportation logistics, since these are handled by external shipping services. |
-| Allow employees to review packaging recommendations and inspection results. | Process customer payments or calculate shipping charges, since these are outside the packaging decision process. |
-| Recommend book distribution between boxes to keep balanced weight. | Provide shipping boxes/containers for delivery. |
+| Allow employees to review packaging recommendations, inspection results, and shipping records. | Process customer payments or calculate shipping charges, since these are outside the packaging decision process. |
+|  | Recommend distributing multiple books among boxes to balance weight; deferred for possible future development. |
+|  | Provide shipping boxes or containers for delivery; these are supplied by the facility. |
 
 These features were excluded to keep the project focused on improving packaging decisions and shipping record management rather than developing physical automation equipment or a complete shipping service. Limiting the scope allows the team to develop and evaluate the core software functionality within the available project timeline and resources.
