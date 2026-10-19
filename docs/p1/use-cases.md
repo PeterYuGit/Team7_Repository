@@ -11,7 +11,7 @@
 | Identifier and name | UC-01 Process Book for Shipment |
 | Primary actor | Packing Employee |
 | Supporting actors | Scale («system» actor) |
-| Preconditions | The employee is at the packing station with the book. A shipping record already exists for the book and the scale is connected. |
+| Preconditions | The employee is at the packing station with a book and an existing shipping record. A scale connection is optional because manual weight entry is supported (FR-02). |
 | Trigger | The employee selects the shipping record for the certain book to be packed. |
 
 **Main success scenario**
@@ -23,7 +23,7 @@
 5. The employee manually enters the physical dimensions (length, width, and thickness in inches) into the system (FR-03).
 6. The system classifies the item size tier according to defined dimension thresholds (FR-04).
 7. The system generates a recommended packaging type, such as cardboard or padded mailers (FR-05, FR-06, FR-07).
-8. The system checks weight parameters and confirms the parcel does not require additional inspection.
+8. The system checks whether the book requires inspection using the weight threshold (FR-08).
 9. The employee confirms and accepts the system-recommended packaging option.
 10. The system updates the shipping record with weight details, selected packaging, and inspection status.
 
