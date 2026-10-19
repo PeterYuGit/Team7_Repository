@@ -42,7 +42,7 @@ All team members have access.
 
 **Repository structure and version control:** BookPack uses `main` as its default and currently only branch. P1 documentation is stored under `docs/p1/`. Existing contributions to `main` are recorded in Git commits. The team has not confirmed a branch naming convention or pull-request requirement. Proposed for P2 (pending team agreement): descriptive commit messages, task-specific branches for larger changes, and pull-request reviews before merging.
 
-**Issue tracking and communication:** The team uses Discord for discussion and GitHub Issues to assign owners, record section tasks, track progress with checklists, and link contribution evidence. Completed Issues #1, #2, and #3 are closed. Issue #4 remains open pending the Section 4 repository commit and final documentation review.
+**Issue tracking and communication:** The team uses Discord for discussion and GitHub Issues to assign owners, record section tasks, track progress with checklists, and link contribution evidence. Completed Issues #1, #2, and #3 are closed. Issue #4 is closed. Section 4 was committed to docs/p1/project-plan.md in commit c97934a.
 
 **Instructor access:** The repository is public and can be viewed through the URL above without a team invitation. Direct confirmation that the instructor has opened it is still pending.
 
@@ -51,5 +51,5 @@ All team members have access.
 | Tool | What it was used for | Who used it | How the output was checked |
 |---|---|---|---|
 | Claude (Anthropic) | Drafting functional requirements FR-01 to FR-13 and acceptance criteria; GitHub setup guidance | Nicholas Suther | Reviewed each requirement against the P1 testability rule (one “shall” sentence, pass/fail criterion); checked sources against Section 2.2; flagged assumed thresholds as open questions |
-| ChatGPT (OpenAI) | Helped draft and refine Sections 1.1, 1.2, and 4.1–4.4, including repository and issue-tracking documentation, and prepare and review the GitHub documentation synchronization (references, UC-01, feasibility, C5). | Patrick Paul | Reviewed drafts against P1 instructions and BookPack requirements; corrected the FR-08 threshold, compared Google Docs with GitHub, reviewed the five-file diff, verified commit fcb7301, and updated team assignments after all members confirmed their roles. |
+| ChatGPT (OpenAI) | Helped draft and refine Sections 1.1, 1.2, and 4.1–4.4, including repository and issue-tracking documentation, and prepare and review the GitHub documentation synchronization (references, UC-01, feasibility, C5). | Patrick Paul | Reviewed drafts against P1 instructions and BookPack requirements; corrected the FR-08 threshold, compared Google Docs with GitHub, reviewed the five-file diff, verified commits fcb7301 and c97934a, and updated team assignments after all members confirmed their roles. |
 | Claude (Anthropic) | Drafting the context diagram, assumptions A2 to A5 and open questions Q1 to Q3 and guidance on committing them to GitHub | Ahmet Keles | Checked each item against the team’s functional requirements from Table 3.1, the use cases and the constraints, then edited the wording myself |
