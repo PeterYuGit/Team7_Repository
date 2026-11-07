@@ -10,7 +10,7 @@ Can BookPack read a stable book weight from a serial/USB postal scale to within 
 
 ## Answer
 
-**Yes, against a simulated scale.** All 105 reads were within tolerance, the p95 read time was 1.00 s, and all 20 disconnects fell back to manual entry within 1.2 s.
+**Yes, against a simulated scale.** All 105 reads were within tolerance, the p95 read time was 1.05 s, and all 20 disconnects fell back to manual entry within 1.22 s.
 It also found one problem: **5 of 15 books weighing exactly 5.00 lb were read as just over 5.0 lb** and would be flagged for inspection. As a result, FR-08's acceptance test ("5.0 lb is not flagged") cannot pass reliably on a real scale (see CH row in docs/p2).
 
 ## Set-up
@@ -34,7 +34,7 @@ It also found one problem: **5 of 15 books weighing exactly 5.00 lb were read as
 |---|---|
 | Within FR-01 tolerance (±0.05 lb) | 105 / 105 |
 | Max / mean absolute error | 0.020 lb / 0.007 lb |
-| Time to stable weight: median / p95 / max | 0.73 s / 1.05 s / 1.25 s (p95 uses 33% of QR-01's 3 s) |
+| Time to stable weight: median / p95 / max | 0.73 s / 1.05 s / 1.25 s (p95 uses 35% of QR-01's 3 s) |
 | Garbled lines safely ignored | 30 of 812 |
 | Disconnects that fell back to manual entry | 20 / 20 |
 | Time to detect disconnect: median / max | 1.11 s / 1.22 s |
