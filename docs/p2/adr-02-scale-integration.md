@@ -8,7 +8,7 @@
 | Options considered | (1) **Direct read:** BookPack reads the scale's data stream, waits for a stable reading, and switches to manual entry if the scale is silent. (2) **Keyboard wedge:** the scale "types" its weight into whatever field has focus, so BookPack needs no scale code. (3) **Manual entry only:** the employee reads the scale display and types the weight. |
 | Decision | Option 1, direct read with manual fallback. |
 | Consequences | **Favors** accuracy and usability: no typing errors, and BookPack only accepts a *stable* weight, which a keyboard wedge cannot tell apart from a still-settling one. The keyboard wedge can also type into the wrong field. **Costs:** we have to write and maintain code tied to the scale's data format; changing scale models means updating the reader. There is up to about 1 s of waiting before a disconnected scale is noticed. Scale noise of about ±0.02 lb makes books at exactly the 5.0 lb flag limit unreliable, so FR-08's acceptance criterion had to change. |
-| Evidence | Spike S-01 (section 8): 105/105 reads within ±0.05 lb, p95 1.00 s, and 20/20 disconnects fell back to manual entry within 1.2 s, against a simulated scale. Not yet tested on the bookstore's actual scale (Q3). |
+| Evidence | Spike S-01 (section 8): 105/105 reads within ±0.05 lb, p95 1.05 s, and 20/20 disconnects fell back to manual entry within 1.22 s, against a simulated scale. Not yet tested on the bookstore's actual scale (Q3). |
 | Related | R1, QR-01, CON-03, A2, Q3, S-01, CH-xx (FR-08) |
 
 ## Trade-off summary row (for 7.2)
