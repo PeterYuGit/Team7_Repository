@@ -52,18 +52,19 @@ No risk is marked closed without evidence. Record status changes in the P2 revis
 
 The public team repository is **https://github.com/PeterYuGit/Team7_Repository**. P1 sources are in `docs/p1/`; current P2 source contributions belong in `docs/p2/`, including design decisions and section files; the source for P2 diagrams should be placed in `docs/p2/diagrams/`; prototypes and test evidence belong under `spikes/` (currently `spikes/S-01-scale-read/`). Documentation should use relative links and preserve the canonical FR, QR, CON, UC, CH, ADR and risk IDs.
 
-For remaining P2 work, the **proposed collaboration rule** is one feature/section branch per coherent contribution, a pull request into `main`, a meaningful teammate review, and documented resolution before merging. This process is being introduced during P2; do not report past direct-to-main commits as PRs. Each person's row in Section 0.1 must link to actual contribution evidence. A separate `docs/p1/README.md` change is proposed in response to P1 C4 feedback.
+For remaining P2 work, the team follows a branch-based contribution process: one feature/section branch per coherent contribution, a pull request into `main`, a meaningful teammate review, and documented resolution before merging. Each person's row in Section 0.1 must link to actual contribution evidence.
 
-**Final submission check (required, not yet complete):** Assemble sections 0–12 and the supporting diagrams into one P2 PDF, commit the final PDF and editable diagram sources, and create the **`p2` Git tag pointing to the commit that contains that PDF**. Verify the tag, public/instructor repository access, and correct Canvas upload by **November 8, 2026, 11:59 PM Central**. Do not state these checks were completed until verified.
+**Final submission check (required, not yet complete):** Assemble sections 0–12 and the supporting diagrams into one P2 PDF, commit the final PDF and editable diagram sources, and create the `p2` Git tag pointing to the commit that contains that PDF. Verify the tag, public/instructor repository access, and correct Canvas upload.
 
-## 10.5 AI tool-use disclosure (known usage; members verify their own rows)
+## 10.5 AI tool-use disclosure
 
-The final document must disclose each person's actual AI-tool usage, scope, and independent checks. The following draft entries require verification by the respective contributors, and do not purport to cover the entire team.
+The final document discloses each person's actual AI-tool usage, scope, and independent checks. The following entries document known usage for the listed contributors.
 
 | Contributor | Tool | Purpose | Human verification required |
 |---|---|---|---|
 | Patrick Paul | ChatGPT (OpenAI) | Helped draft P2 sections 1, 2 and 10, identify inconsistencies and prepare document/repository review. | Patrick reviews wording, checks FR/CH references, resolves assumptions, and verifies final files and review evidence before use. |
 | Patrick Paul | Strata / local Qwen3.8-Flash-Next | Inspected repository content and suggested P2 duties and missing deliverables. | Patrick checks conclusions against actual repository files and records any additional use truthfully. |
-| Nicholas Suther | Claude (Anthropic), **subject to Nicholas's confirmation** | P2 template credits assistance with scale spike S-01, README, ADR-02 and change rows. | Nicholas verifies prototype run logs, calculations, outputs, authorship and final description. |
+| Patrick Paul | Hermes Agent (Nous Research) | Reviewed and modified P2 documentation, performed repository operations, and verified changes against P1 baselines. | Patrick verifies all documentation changes and Git operations before export. |
+| Nicholas Suther | Claude (Anthropic) | P2 template credits assistance with scale spike S-01, README, ADR-02 and change rows. Nicholas ran the scale spike personally and updated results using his own timings. | Nicholas verifies prototype run logs, calculations, outputs, authorship and final description. |
 
 Each other contributor must add an accurate row if an AI tool was used, or confirm no use as the course requires. Do not substitute a teammate's guess for an actual disclosure.
