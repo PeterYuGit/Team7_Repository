@@ -1,0 +1,15 @@
+digraph deployment {
+  rankdir=LR; fontname="Helvetica"; compound=true; node [fontname="Helvetica", fontsize=11]; edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_tz1 { label="Trust zone 1: packing station (BookPack team controls)"; style="dashed,rounded"; color="#1f6feb";
+    subgraph cluster_pc { label="«device» Packing Station PC (1..20)"; style=solid; color="#333333";
+      subgraph cluster_rt { label="«execution environment» Python 3 runtime"; style=solid;
+        app [shape=note, label="«artifact» bookpack-station\n(Station UI, Packing Workflow,\nInspection Workflow, Classification Rules,\nScale Reader, Record Gateway)"];
+        cfg [shape=note, label="«artifact» rules.json"];
+        sec [shape=note, label="«artifact» local credentials file\n(not in repository)"]; } } }
+  subgraph cluster_tz0 { label="Trust zone 0: external device (input not trusted)"; style="dashed,rounded"; color="#d29922";
+    sc [shape=box3d, label="«device» Postal Scale\n(existing, CON-03)"]; }
+  subgraph cluster_tz2 { label="Trust zone 2: bookstore IT (not controlled by team)"; style="dashed,rounded"; color="#cf222e";
+    srv [shape=box3d, label="«device» Bookstore Server\n«artifact» Shipping Record System\n+ database"]; }
+  sc -> app [label="USB-serial (text weight lines)", dir=both];
+  app -> srv [label="HTTPS over bookstore LAN\n(interface to confirm, Q5)", dir=both];
+}
