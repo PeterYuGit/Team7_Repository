@@ -4,7 +4,7 @@ Owner: Ahmet Keles
 
 | ID | Question | Raised by | Owner and due date | Status or answer | Assumption meanwhile |
 |---|---|---|---|---|---|
-| Q1 | What weight and thickness limits decide the packaging type, and is 5.0 lb the right flag limit? | P1 requirements | Peter, Nov 18 | Open; no bookstore answer yet | Table 3.1 as written; thresholds in rules.json (ADR-03) |
+   | Q1 | What weight and thickness limits decide the packaging type, and is 5.0 lb the right flag limit? | P1 requirements | Peter, Nov 18 | Partly answered 11/05 by the owner by email (docs/p2/Stakeholder_Interview.md, PR #13): Table 3.1 thresholds approved; 5.0 lb flag limit not yet confirmed | Table 3.1 as approved; 5.0 lb flag limit as written; thresholds in rules.json (ADR-03) |
 | Q2 | Is the inspector a different person from the packer, and always available? | P1 (A3) | Ahmet, Nov 18 | Open | A separate inspector during business hours |
 | Q3 | Does the existing scale connect to the PC, and what does it send? | P1 (A2, CON-03) | Nicholas, Nov 18 | Partly answered: S-01 works on a simulated scale; real scale untested | Serial line format as in S-01, manual fallback (ADR-02) |
 | Q4 | What happens to a book that fails inspection? | P1 (UC-03) | Ahmet, Nov 18 | Open | Returned for repackaging through UC-01 (UC-03 A2) |
