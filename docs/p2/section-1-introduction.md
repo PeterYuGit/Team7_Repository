@@ -28,3 +28,15 @@ The boundary is the packing-station decision and recording workflow. It assumes 
 ## 1.3 Definitions, acronyms and abbreviations
 
 The P1 definitions remain the baseline, with these P2 clarifications: **size class** means the Small/Medium/Large tier determined by weight and thickness only (CH-03); **flagged** means the FR-08 inspection status according to the manual-entry or scale-tolerance acceptance criterion (CH-01). All other definitions in [`docs/p1/definitions.md`](../p1/definitions.md) are unchanged since the P1 baseline.
+
+## 1.4 References
+
+[R1] USPS shipping requirement https://www.usps.com/ship/packages.htm
+
+[R2] Blog explaining book shipping costs https://goshippo.com/blog/how-to-ship-books-tips-and-best-practices-for-shipping-books
+
+[R3] Student interview transcript https://docs.google.com/document/d/1TVzl55JsLxMukrQFq5bTf4vavkQTuQM04Xo0r75Nc60/edit?usp=sharing
+
+[R4] Amazon packaging instructions https://sell.amazon.com/blog/fba-packaging-prep-labeling
+
+[R5] Indeed shipping coordinator description https://sg.indeed.com/career-advice/finding-a-job/what-does-shipping-coordinator-do
