@@ -64,7 +64,7 @@ The final document discloses each person's actual AI-tool usage, scope, and inde
 |---|---|---|---|
 | Patrick Paul | ChatGPT (OpenAI) | Helped draft P2 sections 1, 2 and 10, identify inconsistencies and prepare document/repository review. | Patrick reviews wording, checks FR/CH references, resolves assumptions, and verifies final files and review evidence before use. |
 | Patrick Paul | Strata / local Qwen3.8-Flash-Next | Inspected repository content and suggested P2 duties and missing deliverables. | Patrick checks conclusions against actual repository files and records any additional use truthfully. |
-| Patrick Paul | Hermes Agent (Nous Research) | Reviewed and modified P2 documentation, performed repository operations, and verified changes against P1 baselines. | Patrick verifies all documentation changes and Git operations before export. |
+| Patrick Paul | Hermes Agent (Nous Research) | Reviewed and modified P2 documentation, performed repository operations, and verified changes against P1 baselines. | Patrick verifies documentation changes and Git operations before export. |
 | Nicholas Suther | Claude (Anthropic) | P2 template credits assistance with scale spike S-01, README, ADR-02 and change rows. Nicholas ran the scale spike personally and updated results using his own timings. | Nicholas verifies prototype run logs, calculations, outputs, authorship and final description. |
 
 Each other contributor must add an accurate row if an AI tool was used, or confirm no use as the course requires. Do not substitute a teammate's guess for an actual disclosure.
