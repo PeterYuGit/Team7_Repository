@@ -22,13 +22,21 @@ The P1 stakeholder list is otherwise carried forward. The P1 instructor's C1 fee
 
 **Packing employee (primary user):** Uses the packing-station computer and scale, enters measurements, follows or overrides a recommendation with an explanation (FR-11/12), and processes books in succession. No specialized shipping-rule knowledge is assumed. **Inspector:** Records pass or fail for flagged books (FR-13). A flagged book remains pending until the required action is recorded (FR-08/14). Whether the bookstore has a separate inspector remains open (Q2). These roles are unchanged since P1; CH-01 and CH-03 affect the rules displayed in their workflows, not the identities of the actors.
 
-## 2.4 Constraints
+## 2.4 Design and Implementation Constraints
 
 - **CON-01:** BookPack must not save a book whose recorded weight is greater than 70 lb.
 - **CON-02:** Weight is stored in pounds, and length, width, and thickness in inches.
-- **CON-03:** The system is intended to run with the packing station's existing computer and scale, without new hardware purchases. The physical scale/interface remains unverified (Q3).
+- **CON-03:** The system is intended to run with the packing station's existing computer and scale, without new hardware purchases. The physical scale/interface remains unverified (Q3). This is carried forward from P1 C3, which was assumed but not confirmed with the bookstore.
+- **C5 (assumption):** Available box sizes for packaging at the store/distributor may be limited. This physical limitation does not introduce inventory tracking or automated box-stock checks. Carried forward from P1 C5 as an unverified physical packaging assumption pending bookstore confirmation.
 
-These constraints are carried forward from P1. The CH-02 upgrade of FR-09 to MUST strengthens validation priority; it does not silently modify CON-01.
+These constraints are carried forward from P1 with the following traceability:
+- P1 C1 maps to P2 CON-01 (USPS 70 lb weight limit)
+- P1 C2 maps to P2 CON-02 (pounds/inches measurement units)
+- P1 C3 maps to P2 CON-03 (existing hardware assumption, Q3)
+- P1 C4 remains an organizational project constraint (GitHub access), not a product requirement
+- P1 C5 remains an unconfirmed physical packaging assumption and does not create a new CON requirement
+
+The CH-02 upgrade of FR-09 to MUST strengthens validation priority; it does not silently modify CON-01.
 
 ## 2.5 Assumptions and dependencies
 
