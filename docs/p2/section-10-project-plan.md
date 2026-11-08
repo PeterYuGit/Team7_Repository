@@ -54,11 +54,11 @@ The public team repository is **https://github.com/PeterYuGit/Team7_Repository**
 
 For remaining P2 work, the team follows a branch-based contribution process: one feature/section branch per coherent contribution, a pull request into `main`, a meaningful teammate review, and documented resolution before merging. Each person's row in Section 0.1 must link to actual contribution evidence.
 
-**Final submission check (required, not yet complete):** Assemble sections 0–12 and the supporting diagrams into one P2 PDF, commit the final PDF and editable diagram sources, and create the `p2` Git tag pointing to the commit that contains that PDF. Verify the tag, public/instructor repository access, and correct Canvas upload.
+**Final submission procedure:** Assemble sections 0–12 and the supporting diagrams into one P2 PDF, commit the final PDF and editable diagram sources, and create the `p2` Git tag pointing to the commit that contains that PDF. Verify the tag, public/instructor repository access, and correct Canvas upload. Deadline: November 8, 2026.
 
 ## 10.5 AI tool-use disclosure
 
-The final document discloses each person's actual AI-tool usage, scope, and independent checks. The following entries document known usage for the listed contributors.
+The following entries document known usage for the listed contributors. Remaining contributors must add an accurate row if an AI tool was used, or confirm no use as the course requires. Do not substitute a teammate's guess for an actual disclosure.
 
 | Contributor | Tool | Purpose | Human verification required |
 |---|---|---|---|
