@@ -58,7 +58,7 @@ For remaining P2 work, the team follows a branch-based contribution process: one
 
 ## 10.5 AI tool-use disclosure
 
-The following entries document known usage for the listed contributors. Remaining contributors must add an accurate row if an AI tool was used, or confirm no use as the course requires. Do not substitute a teammate's guess for an actual disclosure.
+The following table documents the known AI-tool usage of the listed contributors. AI-tool disclosures for other team members have not yet been confirmed.
 
 | Contributor | Tool | Purpose | Human verification required |
 |---|---|---|---|
@@ -66,5 +66,3 @@ The following entries document known usage for the listed contributors. Remainin
 | Patrick Paul | Strata / local Qwen3.8-Flash-Next | Inspected repository content and suggested P2 duties and missing deliverables. | Patrick checks conclusions against actual repository files and records any additional use truthfully. |
 | Patrick Paul | Hermes Agent (Nous Research) | Reviewed and modified P2 documentation, performed repository operations, and verified changes against P1 baselines. | Patrick verifies documentation changes and Git operations before export. |
 | Nicholas Suther | Claude (Anthropic) | P2 template credits assistance with scale spike S-01, README, ADR-02 and change rows. Nicholas ran the scale spike personally and updated results using his own timings. | Nicholas verifies prototype run logs, calculations, outputs, authorship and final description. |
-
-Each other contributor must add an accurate row if an AI tool was used, or confirm no use as the course requires. Do not substitute a teammate's guess for an actual disclosure.
