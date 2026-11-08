@@ -6,9 +6,7 @@ This document establishes the analysis and high-level design baseline for **Book
 
 BookPack addresses inconsistent manual packaging decisions by recording each book's weight and dimensions, classifying it using the **weight and thickness thresholds** in Table 3.1, and recommending a cardboard mailer, padded mailer, or reinforced box. Length and width are still captured for the shipping record, but do not determine the classification tier under CH-03.
 
-The system flags heavy books for additional inspection before shipment, supports manual weight entry when a connected scale cannot provide a reading, and updates an existing shipping record with packaging and inspection information. The revised FR-08 acceptance criterion distinguishes manual entry from scale readings near 5.0 lb: a manually entered 5.0 lb must not be flagged and 5.1 lb must be flagged; a scale reading above 5.05 lb must be flagged, while readings within the scale's ±0.05 lb tolerance around 5.0 lb may be flagged (CH-01). The revised validation rule FR-09 is a MUST requirement (CH-02).
-
-These changes reflect the simulated scale evidence in spike S-01, **not verification with the bookstore's actual scale**. The actual scale protocol (Q3) and stakeholder approval of Table 3.1 thresholds (Q1) remain open. The P1 instructor specifically requested direct bookstore elicitation; the team must not present thresholds as stakeholder-approved until that evidence exists.
+The system flags heavy books for additional inspection before shipment, supports manual weight entry when a connected scale cannot provide a reading, and updates an existing shipping record with packaging and inspection information. The revised FR-08 acceptance criterion distinguishes manual entry from scale readings near 5.0 lb: a manually entered 5.0 lb must not be flagged and 5.1 lb must be flagged; a scale reading above 5.05 lb must be flagged, while readings within the scale's ±0.05 lb tolerance around 5.0 lb may be flagged (CH-01). The revised validation rule FR-09 is a MUST requirement (CH-02). These changes reflect the simulated scale evidence in spike S-01, not verification with the bookstore's actual scale. The actual scale protocol (Q3) and stakeholder approval of Table 3.1 thresholds (Q1) remain open. The Table 3.1 thresholds are not yet confirmed by the bookstore (Q1).
 
 ## 1.2 Scope
 
@@ -23,7 +21,7 @@ These changes reflect the simulated scale evidence in spike S-01, **not verifica
 | Save packaging, weight, and inspection status into an **existing** shipping record and support review (FR-10, FR-15). | Build sales/payment functions or create missing shipping records (A5). |
 | Allow documented packaging overrides when permitted (FR-11, FR-12). | Package multi-book shipments automatically or manage packing-material inventory. |
 
-The boundary is the packing-station decision and recording workflow. It assumes an existing station computer and scale (CON-03/A2), an available inspector (A3/Q2), agreed classification thresholds (A4/Q1), and a shipping record that already exists (A5). The team will track unresolved assumptions rather than imply they have been confirmed.
+The boundary is the packing-station decision and recording workflow. It assumes an existing station computer and scale (CON-03/A2), an available inspector (A3/Q2), agreed classification thresholds (A4/Q1), and a shipping record that already exists (A5). Unresolved assumptions are tracked separately rather than presented as confirmed.
 
 ## 1.3 Definitions, acronyms and abbreviations
 
@@ -40,3 +38,5 @@ The P1 definitions remain the baseline, with these P2 clarifications: **size cla
 [R4] Amazon packaging instructions https://sell.amazon.com/blog/fba-packaging-prep-labeling
 
 [R5] Indeed shipping coordinator description https://sg.indeed.com/career-advice/finding-a-job/what-does-shipping-coordinator-do
+
+*Unchanged since v0.8.*
