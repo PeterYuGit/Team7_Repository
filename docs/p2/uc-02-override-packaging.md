@@ -48,22 +48,21 @@ Owner: Nicholas Suther
 | UC-02 | Traces to requirements | Whether an employee may override the reinforced box a valuable book receives (FR-16) is not specified | Not invented; raised as open question Q8 |
 ## 5.2.1 Object interaction model
 
-(a) Non-trivial steps. Steps (2), (7), and (8) are non-trivial because they require the system to retrieve alternate packaging options, write override details to the shipping record, and verify persistence. Steps (1), (4), and (6) are actor inputs with no system work; steps (3), (5), and (9) handle local interface display and confirmation.
+(a) Non-trivial steps. (2) needs the available packaging types; (4) checks that a reason was given (FR-12); (6) saves the chosen type and reason to the shipping record. (0) shows the recommendation already on screen; (1), (3) and (5) are actor inputs.
 
 (b) Scenario table
 
 | Step | Subject (who acts) | Subject action | Other data / objects | Object acted upon |
 |---|---|---|---|---|
 | 1 | Packing Employee | asks to use a different packaging type | — | PackingController |
-| 2 | PackingController | shows the other packaging types and asks for a reason | Packaging Decision | Packing Employee |
-| 3 | Packing Employee | chooses a packaging type and writes the reason | chosen type, reason | PackingController |
-| 4 | PackingController | shows the chosen packaging type and the reason and asks to confirm | chosen type, reason | Packing Employee |
-| 5 | Packing Employee | confirms  | confirmation | PackingController |
-| 6 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
-| 7 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
-| 8 | ShippingRecord | confirms save successful | confirmation | PackingController|
+| 2 | PackingController | retrieves available packaging types | packaging types | PackagingDecision |
+| 3 | PackingController | shows the other packaging types and asks for a reason | packaging types | Packing Employee |
+| 4 | Packing Employee | chooses a packaging type and writes the reason | chosen type, reason | PackingController |
+| 5 | PackingController | shows the chosen packaging type and the reason and asks to confirm | chosen type, reason | Packing Employee |
+| 6 | Packing Employee | confirms | confirmation | PackingController |
+| 7 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
+| 8 | ShippingRecord | confirms save successful | — | PackingController |
 | 9 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
-
 (c) Analysis sequence diagram
 
 ![Figure 5.2.1 Analysis sequence diagram for UC-02](diagrams/seq-uc02.png)
