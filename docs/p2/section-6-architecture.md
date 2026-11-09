@@ -10,7 +10,7 @@ BookPack is a layered application that runs on each packing-station PC. It reads
 |---|---|---|---|---|---|---|
 | QAS-01 | Performance | An employee enters the last dimension while up to 20 stations are in use | Packing Workflow and Classification Rules | Shows size class, recommendation and flag | 95% within 3 s over one working week; scale read uses at most 1.05 s of that (S-01 p95) | QR-01 |
 | QAS-02 | Availability | The scale stops sending or is unplugged during weighing | Scale Reader | Detects the loss and switches to manual entry with no work lost | Detected within 1.5 s; system usable 99% of business hours over 30 days | QR-03 |
-| QAS-03 | Correctness | A 200-book test set, including books on every Table 3.1 and 70 lb boundary, is processed | Classification Rules | Returns the class, packaging type and flag | At least 98% match the expected table; 100% of books over 70 lb rejected | QR-02 |
+| QAS-03 | Correctness | A 200-book test set, including books on every Table 3.1 and 70 lb boundary and books marked valuable, is processed | Classification Rules | Returns the class, packaging type and flag | At least 98% match the expected table; 100% of books over 70 lb rejected | QR-02 |
 | QAS-04 | Modifiability | The bookstore changes a Table 3.1 threshold after answering Q1 | Rules configuration | New threshold takes effect with no code change | Changed and boundary-retested in under 1 hour, touching one file | QR-02, A4 |
 
 Constraints that shape the architecture: CON-03 (existing PC and scale) puts all BookPack components on the station PC with no new server; CON-01 and CON-02 put the 70 lb rule and units in one Classification Rules component so they are checked in one place.
@@ -36,9 +36,9 @@ Figure 6.3 Component diagram (source: diagrams/component.dot)
 | Station UI | Shows the packing and inspection workflows and collects input | — (actor-facing) | PackingService, InspectionService, RecordQuery | UC-01 to UC-04, QR-04 |
 | Packing Workflow | Runs UC-01 and UC-02 from weighing to saving | PackingService | WeightSource, ClassificationRules, RecordStore | UC-01, UC-02, QAS-01 |
 | Inspection Workflow | Runs UC-03: lists flagged books and records Pass or Fail | InspectionService | RecordStore | UC-03, FR-13, FR-14 |
-| Classification Rules | Decides size class, packaging type, flag and weight validity from the rules configuration | ClassificationRules | rules configuration file | QAS-03, QAS-04, ADR-03, CON-01 |
+| Classification Rules | Decides size class, packaging type, flag and weight validity from the rules configuration, applying the valuable-book exception first | ClassificationRules | rules configuration file | QAS-03, QAS-04, ADR-03, CON-01, FR-16 |
 | Scale Reader | Returns a stable weight or reports that the scale is unavailable | WeightSource | Postal scale serial line | QAS-02, ADR-02, S-01 |
-| Record Gateway | Reads and updates the bookstore's existing shipping records | RecordStore, RecordQuery | Shipping record system interface | FR-10, FR-15, ADR-01 |
+| Record Gateway | Reads and updates the bookstore's existing shipping records, including the valuable flag | RecordStore, RecordQuery | Shipping record system interface | FR-10, FR-15, FR-16, ADR-01 |
 
 External systems outside the boundary: Postal Scale and the Existing Shipping Record System.
 
