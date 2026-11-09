@@ -61,6 +61,8 @@ Owner: Nicholas Suther
 | 5 | Packing Employee | confirms  | confirmation | PackingController |
 | 6 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
 | 7 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
+| 8 | ShippingRecord | confirms save successful | confirmation | PackingController|
+| 9 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
 
 (c) Analysis sequence diagram
 
