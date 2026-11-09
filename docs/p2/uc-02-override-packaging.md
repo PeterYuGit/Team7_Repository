@@ -1,17 +1,18 @@
+
 # UC-02 Override Packaging Recommendation (Section 4)
- 
+
 Owner: Nicholas Suther
- 
+
 ## 4.1 row
- 
+
 | Use case | Name | Why it was selected | Non-trivial steps |
 |---|---|---|---|
-| UC-02 | Override Packaging Recommendation | The only path where the employee disagrees with the system; carries FR-11 and FR-12, the only rule that rejects an entry for being empty; interacts with the valuable-book exception (FR-16) | (4), (6) |
- 
+| UC-02 | Override Packaging Recommendation | The only path where the employee disagrees with the system; carries FR-11 and FR-12, the only rule that rejects an entry for being empty; interacts with the valuable-book exception (FR-16) | (2), (6) |
+
 ## 4.2 Expanded use case
- 
+
 **UC-02 Override Packaging Recommendation**
- 
+
 | Field | Entry |
 |---|---|
 | Primary actor | Packing Employee |
@@ -21,23 +22,23 @@ Owner: Nicholas Suther
 | Preconditions | The employee is processing a book in UC-01 and BookPack has shown a recommended packaging type for it. |
 | Postconditions | The shipping record holds the packaging type the employee chose, in place of the recommendation, together with the written reason. The book's inspection status is unchanged. |
 | Traces to requirements | FR-11, FR-12, FR-10; FR-05 to FR-07 and FR-16 (the recommendation being overridden) |
- 
+
 | Actor input / action | System response |
 |---|---|
 | | (0) The system shows the recommended packaging type with the book's size class, weight and thickness, and offers the choice to use a different packaging type. |
 | (1) The packing employee asks to use a different packaging type. | (2) The system shows the other packaging types and asks for a reason. |
 | (3) The packing employee chooses a packaging type and writes the reason. | (4) The system shows the chosen packaging type and the reason and asks the employee to confirm. |
 | (5) The packing employee confirms. | (6) The system saves the chosen packaging type and the reason to the shipping record in place of the recommendation and confirms that the override was saved. |
- 
+
 | Alternate flow | At step | Condition | What happens | Ends or rejoins at |
 |---|---|---|---|---|
 | A1 | (4) | The reason is empty | The system says a reason is required and saves nothing (FR-12) | Rejoins (3) |
 | A2 | (3) | The employee chooses the packaging type that was already recommended | The system says this matches the recommendation and no override is needed | Ends; UC-01 continues at step 10 with the recommendation |
 | A3 | (5) | The employee cancels | The system keeps the original recommendation and saves nothing | Ends; UC-01 continues at step 9 |
 | A4 | (6) | The override cannot be saved to the shipping record | The system says the override was not saved and keeps the chosen type and reason on screen | Rejoins (5) |
- 
+
 ## 4.3 Self-review log rows
- 
+
 | Use case | Check from the Lesson 13 review checklist | Defect found | How it was fixed |
 |---|---|---|---|
 | UC-02 | Step (0) present | UC-02 had no expansion in P1, so no step (0) existed | Added (0): the recommendation is shown with class, weight and thickness so the employee can judge it |
@@ -46,9 +47,10 @@ Owner: Nicholas Suther
 | UC-02 | Acknowledgment at end | None; (6) ends with a confirmation the employee can see | No defect |
 | UC-02 | No technology | None; no screens, widgets or storage named | No defect |
 | UC-02 | Traces to requirements | Whether an employee may override the reinforced box a valuable book receives (FR-16) is not specified | Not invented; raised as open question Q8 |
+
 ## 5.2.1 Object interaction model
 
-(a) Non-trivial steps. (2) needs the available packaging types; (4) checks that a reason was given (FR-12); (6) saves the chosen type and reason to the shipping record. (0) shows the recommendation already on screen; (1), (3) and (5) are actor inputs.
+(a) Non-trivial steps. (2) retrieves the available packaging types; (6) saves the chosen type and reason to the shipping record. The empty-reason validation required by FR-12 is handled in alternate flow A1 at step (4). Steps (1), (3), and (5) are actor inputs.
 
 (b) Scenario table
 
@@ -63,19 +65,19 @@ Owner: Nicholas Suther
 | 7 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
 | 8 | ShippingRecord | confirms save successful | — | PackingController |
 | 9 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
+
 (c) Analysis sequence diagram
 
 ![Figure 5.2.1 Analysis sequence diagram for UC-02](diagrams/seq-uc02.png)
 
-Figure 5.2.1  Analysis sequence diagram for UC-02; message numbers match the scenario table. PackingController is an interaction object that controls UC-02.
- 
+Figure 5.2.1 Analysis sequence diagram for UC-02; message numbers match the scenario table. PackingController is an interaction object that controls UC-02.
+
 ## Section 11 row (new open question)
- 
+
 | ID | Question | Raised by | Owner and due date | Status or answer | Assumption meanwhile |
 |---|---|---|---|---|---|
-| Q8 (new) | May a packing employee override the reinforced box that a valuable book receives (FR-16)? | UC-02 analysis | Peter, Nov 18 | Open | The override is allowed but requires a reason, like any other override |
- 
+| Q8 (new) | May a packing employee override the reinforced box that a valuable book receives (FR-16)? | UC-02 analysis | Peter, Nov 18 | Open | The override is allowed but requires approval from the bookstore owner or manager. |
+
 ## Note for the domain model (5.1) and K1
- 
+
 Items named in the UC-02 actor column: packaging type and reason. The domain model needs these as attributes (for example on the packaging decision: recommended type, chosen type, override reason).
- 
