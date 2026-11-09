@@ -14,7 +14,7 @@
 | FR-11, FR-12 | UC-02 | PackagingDecision, PackingController | Packing Workflow, Station UI | none | Override tests |
 | FR-13, FR-14 | UC-03 (1)–(2), (5)–(6) | InspectionController, Inspection | Inspection Workflow, Record Gateway | none | Pass and list tests |
 | FR-15 | UC-04 (not analyzed) | none | Record Gateway, Station UI | ADR-01 | Record view test |
-| FR-16 | UC-01 s7 (to add) | ShippingRecord, PackagingDecision | Record Gateway, Packing Workflow | ADR-01, ADR-03 | Valuable-book test |
+| FR-16 | UC-01 s7 (to add) | ShippingRecord, PackagingDecision | Record Gateway, Packing Workflow, Classification Rules | ADR-01, ADR-03 | Valuable-book test |
 | QR-01 | UC-01 s5–7 | PackingController, ShippingRules | Packing Workflow, Classification Rules | QAS-01, ADR-01, ADR-02 | S-01 (p95 1.05 s); trial |
 | QR-03 | UC-01 s3 | ScaleReader | Scale Reader | QAS-02, ADR-01, ADR-02 | S-01 (1.22 s); uptime log |
 | QR-04 | UC-01 | PackingController | Station UI | none | Usability test |
