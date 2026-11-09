@@ -14,7 +14,7 @@ The system flags heavy books for additional inspection before shipment, supports
 |---|---|
 | Read weight from a connected scale, with manual entry as a fallback (FR-01, FR-02). | Manufacture weighing hardware or require a new scale purchase. |
 | Record weight in pounds plus manually entered length, width, and thickness in inches (FR-03, CON-02). | Measure dimensions automatically using cameras or sensors. |
-| Classify Small, Medium, or Large using **weight and thickness** under the assumed Table 3.1 thresholds (FR-04, CH-03). | Use length and width as classification thresholds without an approved requirement change. |
+| Classify Small, Medium, or Large using **bookstore-approved Table 3.1 thresholds** (FR-04, CH-03). | Use length and width as classification thresholds without an approved requirement change. |
 | Recommend cardboard mailers, padded mailers, or reinforced boxes for the resulting class (FR-05–FR-07). | Physically pack books or operate packing machines. |
 | Validate weight input and refuse to save book records for zero, negative, or values above 70 lb (FR-09, CON-01). | Manage transportation, shipment tracking, or carrier logistics. |
 | Apply the revised heavy-book inspection rule and capture inspection outcomes (FR-08, FR-13, FR-14). | Automatically identify physical book damage. |
@@ -22,7 +22,7 @@ The system flags heavy books for additional inspection before shipment, supports
 | Retrieve valuable-book designation from an existing shipping record and recommend reinforced-box packaging regardless of size class (FR-16). | Determine monetary book value or designate books as valuable. |
 | Allow documented packaging overrides when permitted (FR-11, FR-12). | Package multi-book shipments automatically or manage packing-material inventory. |
 
-The boundary is the packing-station decision and recording workflow. It assumes an existing station computer and scale (CON-03/A2), an available inspector (A3/Q2), agreed classification thresholds (A4/Q1), a shipping record that already exists (A5), and existing shipping records may contain a valuable-book designation (FR-16). Unresolved assumptions are tracked separately rather than presented as confirmed.
+The boundary is the packing-station decision and recording workflow. It assumes an existing station computer and scale (CON-03/A2), an available inspector (A3/Q2), bookstore-approved classification thresholds (A4/Q1), a shipping record that already exists (A5), and existing shipping records may contain a valuable-book designation (FR-16). Unresolved assumptions are tracked separately rather than presented as confirmed.
 
 ## 1.3 Definitions, acronyms and abbreviations
 
