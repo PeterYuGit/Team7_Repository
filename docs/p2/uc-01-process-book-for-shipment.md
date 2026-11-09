@@ -26,7 +26,7 @@ P2 Section 4 (Use-Case Analysis): Afeef Zarraf
 | (1) The packing employee gives the book order number | (2) The system finds the book’s shipping record, shows the order number and title, and asks the employee to place book on scale. |
 | (3) The packing employee places book on scale. | (4) The system reads the weight and shows it, and asks for the book length, width and thickness. |
 | (5) The packing employee enters the length, width, and thickness in INCHES. | (6) The system classifies the book using the weight and thickness thresholds that are set in Table 3.1 and shows its size category with weight and thickness. |
-| (7) The packing employee asks for packaging type recommendation. . | (8) The system shows the recommended packing type for the size class and shows that the book doesn’t need inspection |
+| (7) The packing employee asks for packaging type recommendation. . | (8) The system shows the recommended packaging type according to the Table 3.1 and displays if the book requires additional inspection under FR-08. |
 | (9) The packing employee accepts the recommendation. | (10) The system saves the weight, dimensions, packing type and inspection status to the shipping record and confirms that the book was processes. |
 
 | Alternate flow | At step | Condition | What happens | Ends or rejoins at |
@@ -34,7 +34,7 @@ P2 Section 4 (Use-Case Analysis): Afeef Zarraf
 | A1 | (2) | No shipping record matches the order number | The system says no record found and saves nothing | Rejoins (1) |
 | A2 | (3) | No scale reading is available | The packing employee enters the weight by hand (FR-02) | Rejoins (4) with the entered weight |
 | A3 | (4) | The weight is 0lbs or less, or over 70lbs | The system shows error and saves nothing (FR-09, CON-01) | Rejoins (3) |
-| A4 | (8) | The weight is over 5.0 lbs | The system shows the recommendation and that the book will be flagged for inspection (FR-08) | Rejoins (9); at (10) the status is saved and waiting for inspection (UC-03) |
+| A4 | (8) | The book's weight meets the FR-08 inspection criteria, accounting for the applicable manual-entry or scale-reading tolerance | The system shows the recommendation and that the book requires additional inspection (FR-08). At step (10), the inspection status is saved as awaiting inspection. | Rejoins (9) |
 | A5 | (8) | The shipping record marks the book as valuable | The system recommends a reinforced without regards to size class and says why; the weight and dimensions are still recorded (FR-16) | Rejoins (9) |
 | A6 | (9) | The packing employee rejects the recommendation | The employee chooses another packing type with a reason | Continues in UC-02 Override Packing Recommendation |
 | A7 | (10) | The shipping record cannot be saved | The system says the record was not saved and keeps the entries on screen. | Rejoins (9) |
