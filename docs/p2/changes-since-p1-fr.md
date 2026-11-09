@@ -1,4 +1,3 @@
-Changes since p1 fr · MD
 # 0.2 Changes since the P1 baseline: functional requirement rows (Nicholas Suther)
  
 These are Nicholas Suther's rows in the team's 0.2 table (CH-01 to CH-03 and CH-06). CH-04 and CH-05 are owned by other members and appear in the full table in the P2 document.
