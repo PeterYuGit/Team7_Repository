@@ -36,7 +36,7 @@ Figure 6.3 Component diagram (source: diagrams/component.dot)
 | Station UI | Shows the packing and inspection workflows and collects input | — (actor-facing) | PackingService, InspectionService, RecordQuery | UC-01 to UC-04, QR-04 |
 | Packing Workflow | Runs UC-01 and UC-02 from weighing to saving | PackingService | WeightSource, ClassificationRules, RecordStore | UC-01, UC-02, QAS-01 |
 | Inspection Workflow | Runs UC-03: lists flagged books and records Pass or Fail | InspectionService | RecordStore | UC-03, FR-13, FR-14 |
-| Classification Rules | Decides size class, packaging type, flag and weight validity from the rules configuration, applying the valuable-book exception first | ClassificationRules | rules configuration file | QAS-03, QAS-04, ADR-03, CON-01, FR-16 |
+| Classification Rules | Decides size class, packaging type, flag and weight validity from the rules configuration, applying the valuable-book exception first; the 70 lb limit is fixed in code | ClassificationRules | rules configuration file | QAS-03, QAS-04, ADR-03, CON-01, FR-16 |
 | Scale Reader | Returns a stable weight or reports that the scale is unavailable | WeightSource | Postal scale serial line | QAS-02, ADR-02, S-01 |
 | Record Gateway | Reads and updates the bookstore's existing shipping records, including the valuable flag | RecordStore, RecordQuery | Shipping record system interface | FR-10, FR-15, FR-16, ADR-01 |
 
