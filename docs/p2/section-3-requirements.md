@@ -21,7 +21,7 @@ Carried forward from P1 v0.8 with CH-01, CH-02, CH-03, CH-05 and CH-06 applied. 
 | FR-13 | The system shall allow an inspector to record Pass or Fail for a flagged book. | MUST | Bookstore | A flagged book cannot be marked ready to ship until Pass is recorded. |
 | FR-14 | The system shall display all books with an inspection status of "awaiting inspection", including each book's weight, dimensions, and packaging type. | SHOULD | Inspector | With two flagged books and one unflagged book in the system, the list shows exactly the two flagged books, each with weight, dimensions, and packaging type. |
 | FR-15 | The system shall allow an employee to view a book's shipping record, including its weight, packaging type, and inspection status. | SHOULD | Packing employee | After a book is processed, opening its record shows weight, packaging type, and inspection status. |
-| FR-16 | The system shall retrieve the valuable flag from a book's shipping record and, when the flag is set, apply the packaging exception by recommending a reinforced box regardless of the book's weight or size. | MUST | Bookstore owner (interview, 11/05/2026) | A 0.5 lb, 0.5 in thick book (Small) with the valuable flag set shows "Reinforced box," and its weight and dimensions are still recorded. The same book without the flag shows "Cardboard mailer." *(Added, CH-05)* |
+| FR-16 | The system shall retrieve the valuable flag from a book's shipping record and, when the flag is set, apply the packaging exception by recommending a reinforced box regardless of the book's weight or size. | MUST | Bookstore owner (interview, 11/05/2026) | A 0.5 lb, 0.5 in thick book (Small) and a 2.0 lb book (Medium) with the valuable flag set both show "Reinforced box," and their weight and dimensions are still recorded. The same books without the flag show "Cardboard mailer" and "Padded mailer." A shipping record with no valuable flag is treated as not valuable. *(Added, CH-05)* |
  
 **Table 3.1 Packaging classification thresholds (approved by the bookstore owner, interview 11/05/2026)**
  
@@ -35,11 +35,24 @@ Classification uses weight and thickness only. Length and width are recorded (FR
  
 ## 3.2 Quality requirements
  
-Unchanged since v0.8 (QR-01 to QR-04).
+Unchanged since v0.8.
+ 
+| ID | Requirement (with threshold, condition and method) | Priority | Source | How it will be verified |
+|---|---|---|---|---|
+| QR-01 | Ninety-five percent of packaging recommendations shall be returned within 3 seconds of a book's weight and dimensions being entered, measured over one working week under normal load of up to 20 concurrent employees. | MUST | Warehouse operations / instructor | Timestamp logging of request and response, analyzed over a one-week trial |
+| QR-02 | The system shall recommend the correct packaging type (mailer, padded mailer, or reinforced box) for at least 98% of books in a 200-book test set, as judged against the documented weight and dimension rules. | MUST | Shipping staff | Run the test set through the system and compare results against the expected packaging table |
+| QR-03 | The system shall be available 99% of the time during business hours (8am to 6pm, Monday to Friday), measured over a 30-day period. | SHOULD | Stakeholders | Uptime monitoring log reviewed at the end of the period |
+| QR-04 | A new employee shall be able to record a book's weight, view the packaging recommendation, and view the inspection flag within 5 minutes of training, with at least 90% of 10 test users succeeding on the first attempt. | SHOULD | Employees / instructors | Moderated usability test with 10 participants using a task checklist |
  
 ## 3.3 Constraint requirements
  
-Unchanged since v0.8 (CON-01 to CON-03).
+Unchanged since v0.8.
+ 
+| ID | Constraint (one sentence) | Source | Why it cannot be negotiated |
+|---|---|---|---|
+| CON-01 | The system shall not save a book record if its weight exceeds 70 lb. | R1 USPS package weight | USPS sets limits and will refuse heavier packages. Neither the team nor the bookstore can work around this requirement. |
+| CON-02 | The system shall store book weight in pounds and length, width, and thickness in inches. | R1 USPS shipping requirements | USPS publishes limits in pounds and inches. Using other units would conflict at checking points and lead to conversion errors. |
+| CON-03 | The system shall run on the packing station's existing computer system and scale without requiring new hardware purchases. | Bookstore (2.4 C3); assumed, Q3 | We assumed the bookstore will not buy new hardware. If the answer to Q3 differs, the constraint will be reviewed through change control. |
  
 ## 3.4 Initial use cases
  
