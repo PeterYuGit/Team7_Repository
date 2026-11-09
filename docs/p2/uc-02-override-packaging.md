@@ -46,6 +46,28 @@ Owner: Nicholas Suther
 | UC-02 | Acknowledgment at end | None; (6) ends with a confirmation the employee can see | No defect |
 | UC-02 | No technology | None; no screens, widgets or storage named | No defect |
 | UC-02 | Traces to requirements | Whether an employee may override the reinforced box a valuable book receives (FR-16) is not specified | Not invented; raised as open question Q8 |
+## 5.2.1 Object interaction model
+
+(a) Non-trivial steps. (2) needs the available packaging types; (4) checks that a reason was given (FR-12); (6) saves the chosen type and reason to the shipping record. (0) shows the recommendation already on screen; (1), (3) and (5) are actor inputs.
+
+(b) Scenario table
+
+| Step | Subject (who acts) | Subject action | Other data / objects | Object acted upon |
+|---|---|---|---|---|
+| 1 | Packing Employee | asks to use a different packaging type | — | PackingController |
+| 2 | PackingController | retrieves available packaging types | packaging types | PackagingDecision |
+| 3 | PackingController | shows the other packaging types and asks for a reason | packaging types | Packing Employee |
+| 4 | Packing Employee | chooses a packaging type and writes the reason | chosen type, reason | PackingController |
+| 5 | PackingController | shows the chosen packaging type and the reason and asks to confirm | chosen type, reason | Packing Employee |
+| 6 | Packing Employee | confirms | confirmation | PackingController |
+| 7 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
+| 8 | ShippingRecord | confirms save successful | — | PackingController |
+| 9 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
+(c) Analysis sequence diagram
+
+![Figure 5.2.1 Analysis sequence diagram for UC-02](diagrams/seq-uc02.png)
+
+Figure 5.2.1  Analysis sequence diagram for UC-02; message numbers match the scenario table. PackingController is an interaction object that controls UC-02.
  
 ## Section 11 row (new open question)
  
