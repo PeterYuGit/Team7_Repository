@@ -48,7 +48,7 @@ Owner: Nicholas Suther
 | UC-02 | Traces to requirements | Whether an employee may override the reinforced box a valuable book receives (FR-16) is not specified | Not invented; raised as open question Q8 |
 ## 5.2.1 Object interaction model
 
-(a) Non-trivial steps. Steps (2), (4), and (6) are non-trivial because they require the system to retrieve alternate packaging options, validate input, and persist override data to the shipping record. Steps (0) and (1) are initial displays and actor inputs; steps (3) and (5) are direct employee inputs/confirmations are actor inputs with no system work.
+(a) Non-trivial steps. Steps (2), (7), and (8) are non-trivial because they require the system to retrieve alternate packaging options, write override details to the shipping record, and verify persistence. Steps (1), (4), and (6) are actor inputs with no system work; steps (3), (5), and (9) handle local interface display and confirmation.
 
 (b) Scenario table
 
@@ -56,9 +56,9 @@ Owner: Nicholas Suther
 |---|---|---|---|---|
 | 1 | Packing Employee | asks to use a different packaging type | — | PackingController |
 | 2 | PackingController | shows the other packaging types and asks for a reason | Packaging Decision | Packing Employee |
-| 3 | Packaging Employee | chooses a packaging type and writes the reason | chosen type, reason | Packing Controller |
+| 3 | Packing Employee | chooses a packaging type and writes the reason | chosen type, reason | PackingController |
 | 4 | PackingController | shows the chosen packaging type and the reason and asks to confirm | chosen type, reason | Packing Employee |
-| 5 | Packaging Employee | confirms  | confirmation | Packing Controller |
+| 5 | Packing Employee | confirms  | confirmation | PackingController |
 | 6 | PackingController | saves the chosen packaging type and reason to the shipping record | chosen type, reason | ShippingRecord |
 | 7 | PackingController | confirms that the override was saved | confirmation | Packing Employee |
 
@@ -66,7 +66,7 @@ Owner: Nicholas Suther
 
 ![Figure 5.2.1 Analysis sequence diagram for UC-02](diagrams/seq-uc02.png)
 
-Figure 5.2.1  Analysis sequence diagram for UC-02; message numbers match the scenario table PackingController is an interaction object that controls UC-02.
+Figure 5.2.1  Analysis sequence diagram for UC-02; message numbers match the scenario table. PackingController is an interaction object that controls UC-02.
  
 ## Section 11 row (new open question)
  
