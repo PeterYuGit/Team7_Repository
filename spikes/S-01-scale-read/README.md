@@ -44,7 +44,7 @@ It also found one problem: **5 of 15 books weighing exactly 5.00 lb were read as
 ## What it changed or confirmed
 
 - **Confirmed ADR-02:** BookPack reads the scale directly, waits for a stable reading, and falls back to manual entry. Reading the scale uses about a third of the 3 s budget, which leaves room for classification and saving the record.
-- **Changed FR-08:** Scale noise means a book at exactly 5.0 lb can read 5.01 or 5.02 lb. We record this as a change (see docs/p2/changes-since-p1.md) instead of pretending the boundary test will pass.
+- **Changed FR-08:** Scale noise means a book at exactly 5.0 lb can read 5.01 or 5.02 lb. We record this as a change (see docs/p2/changes-since-p1-fr.md) instead of pretending the boundary test will pass.
 - **Not answered (still open):** Whether the bookstore's actual scale has a computer connection and sends this kind of format (Q3, A2). The next step is to rerun the reader against the real scale and swap in its line format.
 
 ## Files
