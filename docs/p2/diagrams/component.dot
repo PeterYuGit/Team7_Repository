@@ -1,0 +1,28 @@
+digraph components {
+  rankdir=LR; fontname="Helvetica"; node [fontname="Helvetica", fontsize=11]; edge [fontname="Helvetica", fontsize=9];
+  subgraph cluster_bp { label="BookPack (system boundary)"; style=rounded; color="#333333";
+    subgraph cluster_p { label="Presentation layer"; style=dashed;
+      ui [shape=component, label="Station UI"]; }
+    subgraph cluster_a { label="Application layer"; style=dashed;
+      pack [shape=component, label="Packing Workflow"];
+      insp [shape=component, label="Inspection Workflow"]; }
+    subgraph cluster_d { label="Domain / rules layer"; style=dashed;
+      rules [shape=component, label="Classification Rules"];
+      cfg [shape=note, label="rules configuration\n(Table 3.1, 5.0 lb, 70 lb)"]; }
+    subgraph cluster_i { label="Integration layer"; style=dashed;
+      scale [shape=component, label="Scale Reader"];
+      gw [shape=component, label="Record Gateway"]; }
+  }
+  extscale [shape=box3d, label="«external system»\nPostal Scale"];
+  extrec [shape=box3d, label="«external system»\nExisting Shipping\nRecord System"];
+  ui -> pack [label="requires PackingService"];
+  ui -> insp [label="requires InspectionService"];
+  ui -> gw [label="requires RecordQuery (UC-04)"];
+  pack -> rules [label="requires ClassificationRules"];
+  pack -> scale [label="requires WeightSource"];
+  pack -> gw [label="requires RecordStore"];
+  insp -> gw [label="requires RecordStore"];
+  rules -> cfg [style=dashed, label="reads"];
+  scale -> extscale [label="weight readings (serial line)"];
+  gw -> extrec [label="shipping-record interface"];
+}

@@ -1,0 +1,14 @@
+sequenceDiagram
+  actor N as Inspector
+  participant C as InspectionController
+  participant SR as ShippingRecord
+  participant I as Inspection
+  N->>C: 1 asks for the books awaiting inspection
+  C->>SR: 2 asks for the records awaiting inspection
+  C-->>N: 3 shows each book with weight, dimensions and packaging type
+  N->>C: 4 selects a book
+  C->>I: 5 asks for the book's open inspection
+  N->>C: 6 records Pass
+  C->>I: 7 records the result, inspector and time
+  C->>SR: 8 sets the record to ready to ship
+  C-->>N: 9 confirms the result and shows the updated list
